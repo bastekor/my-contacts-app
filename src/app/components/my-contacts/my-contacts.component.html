@@ -31,8 +31,12 @@
         <td>{{ contact.photo }}</td>
         <td class="text-end">
           <div class="btn btn-group">
-            <button class="btn btn-primary" [routerLink]="[contact.contact_id, 'edit']">Editar</button>
-            <button class="btn btn-danger">Elimiar</button>
+            <button class="btn btn-primary" [routerLink]="[contact.contact_id, 'edit']">
+              Editar
+            </button>
+            <button class="btn btn-danger" (click)="deleteContact(contact)">
+              Elimiar
+            </button>
           </div>
         </td>
       </tr>

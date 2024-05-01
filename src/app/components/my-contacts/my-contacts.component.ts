@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { ContactService } from '../../services/contact.service';
 import { RouterModule } from '@angular/router';
-import { Contact } from '../../model/contact.interface'
+import { Contact } from '../../model/contact.interface';
 
 @Component({
   selector: 'app-my-contacts',
@@ -22,5 +22,16 @@ export class MyContactsComponent {
             console.log(contacts);
             this.contacts = contacts;
         });
+    }
+
+    deleteContact(contact: Contact) {
+      this.contactService.delete(contact.contact_id)
+      .subscribe(() => {
+        this.contactService.list()
+        .subscribe(contacts => {
+            console.log(contacts);
+            this.contacts = contacts;
+        });
+      });
     }
 }
