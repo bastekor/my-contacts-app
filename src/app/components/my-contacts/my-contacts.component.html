@@ -1,5 +1,11 @@
 <h2 class="mb-5">Mis Contactos</h2>
 
+<div class="text-end">
+  <button class="btn btn-primary" routerLink="/new-contact">
+    Nuevo Contacto
+  </button>
+</div>
+
 <table class="table table-hover">
   <thead>
     <tr>
@@ -10,6 +16,7 @@
       <th>EMAIL</th>
       <th>DIRECCION</th>
       <th>FOTO</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -22,6 +29,12 @@
         <td>{{ contact.email }}</td>
         <td>{{ contact.address }}</td>
         <td>{{ contact.photo }}</td>
+        <td>
+          <div class="btn btn-group">
+            <button class="btn btn-primary">Editar</button>
+            <button class="btn btn-danger">Elimiar</button>
+          </div>
+        </td>
       </tr>
     }
   </tbody>

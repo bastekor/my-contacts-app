@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
+import { Contact } from '../model/contact.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -16,11 +17,11 @@ export class ContactService {
     }
 
     list() {
-      return this.http.get('http://localhost:8080/v1/contacts', { headers: this.getHeaders() });
+      return this.http.get<Contact[]>('http://localhost:8080/v1/contacts', { headers: this.getHeaders() });
     }
 
     get(id: string) {
-      return this.http.get(`http://localhost:8080/v1/contacts/${id}`, { headers: this.getHeaders() });
+      return this.http.get<Contact>(`http://localhost:8080/v1/contacts/${id}`, { headers: this.getHeaders() });
     }
 
     create(contact: any) {
@@ -28,7 +29,7 @@ export class ContactService {
     }
 
     update(id: string, contact: any) {
-      return this.http.put(`http://localhost:8080/v1/contacts/${id}`, contact, { headers: this.getHeaders() });
+      return this.http.put<Contact>(`http://localhost:8080/v1/contacts/${id}`, contact, { headers: this.getHeaders() });
     }
 
     delete(id: string) {

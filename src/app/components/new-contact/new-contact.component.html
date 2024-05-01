@@ -1,0 +1,98 @@
+<h2 class="mb-5">Nuevo Contacto</h2>
+
+<div class="row row-cols-3 justify-content-center">
+  <form [formGroup]="form" (ngSubmit)="create()">
+
+    <!-- Entrada de los nombres -->
+    <div class="mb-3">
+      <label for="name">Nombre(s)</label>
+      <input
+        id="name"
+        type="text"
+        placeholder="Nombre(s) del Contacto..."
+        class="form-control"
+        formControlName="name"
+        />
+      </div>
+
+      <!-- Entrada de los apellidos -->
+      <div class="mb-3">
+        <label for="surname">Apellido(s)</label>
+        <input
+        id="surname"
+        type="text"
+        placeholder="Apellidos(s) del Contacto..."
+        class="form-control"
+        formControlName="sur_name"
+      />
+    </div>
+
+    <!-- Entrada del alias -->
+    <div class="mb-3">
+      <label for="alias">Alias</label>
+      <input
+        id="alias"
+        type="text"
+        placeholder="Alias del Contacto..."
+        class="form-control"
+        formControlName="alias"
+      />
+    </div>
+
+    <!-- Entrada del teléfono -->
+    <div class="mb-3">
+      <label for="phone">Teléfono</label>
+      <input
+        id="phone"
+        type="text"
+        placeholder="Teléfono del Contacto..."
+        class="form-control"
+        formControlName="phone_number"
+      />
+    </div>
+
+    <!-- Entrada del email -->
+    <div class="mb-3">
+      <label for="email">Correo Electrónico</label>
+      <input
+        id="email"
+        type="text"
+        placeholder="Correo Electrónico del Contacto..."
+        class="form-control"
+        formControlName="email"
+      />
+    </div>
+
+    <!-- Entrada de la dirección -->
+    <div class="mb-3">
+      <label for="address">Dirección</label>
+      <input
+        id="address"
+        type="text"
+        placeholder="Dirección del Contacto..."
+        class="form-control"
+        formControlName="address"
+      />
+    </div>
+
+    <!-- Entrada de la dirección -->
+    <div class="mb-3">
+      <label for="photo">Fotografía</label>
+      <input
+        id="photo"
+        type="file"
+        placeholder="Fotografía del Contacto..."
+        class="form-control"
+        formControlName="photo"
+      />
+    </div>
+
+    <div class="text-end">
+      <button type="button" class="btn btnlight" routerLink="/">
+        Cancelar
+      </button>
+
+      <button class="btn btn-primary ms2">Crear Contacto</button>
+    </div>
+  </form>
+</div>
