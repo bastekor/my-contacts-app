@@ -24,11 +24,11 @@ export class ContactService {
       return this.http.get<Contact>(`http://localhost:8080/v1/contacts/${id}`, { headers: this.getHeaders() });
     }
 
-    create(contact: any) {
+    create(contact: Contact) {
       return this.http.post('http://localhost:8080/v1/contacts', contact, { headers: this.getHeaders() });
     }
 
-    update(id: string, contact: any) {
+    update(id: string, contact: Contact) {
       return this.http.put<Contact>(`http://localhost:8080/v1/contacts/${id}`, contact, { headers: this.getHeaders() });
     }
 

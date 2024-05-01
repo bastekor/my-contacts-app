@@ -29,9 +29,9 @@
         <td>{{ contact.email }}</td>
         <td>{{ contact.address }}</td>
         <td>{{ contact.photo }}</td>
-        <td>
+        <td class="text-end">
           <div class="btn btn-group">
-            <button class="btn btn-primary">Editar</button>
+            <button class="btn btn-primary" [routerLink]="[contact.contact_id, 'edit']">Editar</button>
             <button class="btn btn-danger">Elimiar</button>
           </div>
         </td>
