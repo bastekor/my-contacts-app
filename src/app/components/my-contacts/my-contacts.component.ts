@@ -14,24 +14,23 @@ export class MyContactsComponent {
 
   private contactService = inject(ContactService);
 
-    contacts: Contact[] = [];
+  contacts: Contact[] = [];
 
-    ngOnInit(): void {
-        this.contactService.list()
-        .subscribe(contacts => {
-            console.log(contacts);
-            this.contacts = contacts;
-        });
-    }
-
-    deleteContact(contact: Contact) {
-      this.contactService.delete(contact.contact_id)
-      .subscribe(() => {
-        this.contactService.list()
-        .subscribe(contacts => {
-            console.log(contacts);
-            this.contacts = contacts;
-        });
+  ngOnInit(): void {
+    this.contactService.getContacts()
+      .subscribe(contacts => {
+        this.contacts = contacts;
       });
-    }
+  }
+
+  deleteContact(contact: Contact) {
+    this.contactService.deleteContact(contact.contact_id)
+      .subscribe(() => {
+        this.contactService.getContacts()
+          .subscribe(contacts => {
+            console.log(contacts);
+            this.contacts = contacts;
+          });
+      });
+  }
 }
