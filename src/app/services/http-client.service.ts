@@ -12,15 +12,15 @@ export class HttpClientService {
     return this.httpClient.get<T>(url, {headers});
   }
 
-  post<T>(url: string, headers: HttpHeaders, body:T) {
+  post<T>(url: string, headers: HttpHeaders, body:T): Observable<T> {
     return this.httpClient.post<T>(url, body, {headers});
   }
 
-  put<T>(url: string, headers: HttpHeaders, body:T) {
+  put<T>(url: string, headers: HttpHeaders, body:T): Observable<T> {
     return this.httpClient.put<T>(url, body, {headers});
   }
 
-  delete<T>(url: string, headers: HttpHeaders) {
+  delete<T>(url: string, headers: HttpHeaders): Observable<T> {
     return this.httpClient.delete<T>(url, {headers});
   }
 }
