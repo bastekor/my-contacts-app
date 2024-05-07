@@ -2,11 +2,12 @@ import { Component, inject } from '@angular/core';
 import { ContactService } from '../../services/contact.service';
 import { RouterModule } from '@angular/router';
 import { Contact } from '../../model/contact.interface';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-my-contacts',
   standalone: true,
-  imports: [RouterModule],
+  imports: [RouterModule, DatePipe],
   templateUrl: './my-contacts.component.html',
   styleUrl: './my-contacts.component.css'
 })

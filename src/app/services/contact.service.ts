@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { Contact } from '../model/contact.interface';
 import { HttpClientService } from './http-client.service';
+import { Observable } from 'rxjs';
 
 @Injectable({providedIn: 'root'})
 export class ContactService extends HttpClientService {
@@ -23,11 +24,11 @@ export class ContactService extends HttpClientService {
 		return super.get<Contact>(`http://localhost:8080/v1/contacts/${id}`, this.getHeaders());
 	}
 
-	createContact(contact: Contact) {
+	createContact(contact: Contact): Observable<Contact> {
 		return super.post<Contact>('http://localhost:8080/v1/contacts', this.getHeaders(), contact);
 	}
 
-	updateContact(id: string, contact: Contact) {
+	updateContact(id: string, contact: Contact): Observable<Contact> {
 		return super.put<Contact>(`http://localhost:8080/v1/contacts/${id}`, this.getHeaders(), contact);
 	}
 

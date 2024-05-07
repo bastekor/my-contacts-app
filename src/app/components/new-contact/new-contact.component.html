@@ -23,6 +23,10 @@
           />
         </div>
 
+        @if (form.get('name')?.hasError('required')) {
+          <p class="invalid-feedback d-block">Nombre(s) del contacto es requerido...</p>
+        }
+
         <!-- Entrada de los apellidos -->
         <div class="mb-3">
           <label for="surname">Apellido(s)</label>
@@ -34,6 +38,10 @@
           formControlName="sur_name"
         />
       </div>
+
+      @if (form.get('sur_name')?.hasError('required')) {
+        <p class="invalid-feedback d-block">Apellido(s) del contacto es requerido...</p>
+      }
 
       <!-- Entrada del alias -->
       <div class="mb-3">
@@ -59,6 +67,10 @@
         />
       </div>
 
+      @if (form.get('phone_number')?.hasError('required')) {
+        <p class="invalid-feedback d-block">Teléfono del contacto es requerido...</p>
+      }
+
       <!-- Entrada del email -->
       <div class="mb-3">
         <label for="email">Correo Electrónico</label>
@@ -70,6 +82,14 @@
           formControlName="email"
         />
       </div>
+
+      @if (form.get('email')?.hasError('required')) {
+        <p class="invalid-feedback d-block">Correo electrónico del contacto es requerido...</p>
+      }
+
+      @if (form.get('email')?.hasError('email')) {
+        <p class="invalid-feedback d-block">El correo electrónico es invalido, no cumple con formato...</p>
+      }
 
       <!-- Entrada de la dirección -->
       <div class="mb-3">
@@ -101,7 +121,7 @@
         </button>
 
         <button class="btn btn-primary ms2">
-          @if (contact) {
+          @if (this.contact) {
             Actualizar
           } @else {
             Crear

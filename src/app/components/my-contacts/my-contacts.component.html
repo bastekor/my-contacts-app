@@ -14,6 +14,7 @@
       <th>ALIAS</th>
       <th>TELEFONO</th>
       <th>EMAIL</th>
+      <th>FECHA DE REGISTRO</th>
       <th>DIRECCION</th>
       <th>FOTO</th>
       <th></th>
@@ -27,6 +28,7 @@
         <td>{{ contact.alias }}</td>
         <td>{{ contact.phone_number }}</td>
         <td>{{ contact.email }}</td>
+        <td>{{ contact.date | date:'dd/MM/yyyy hh:mm a' }}</td>
         <td>{{ contact.address }}</td>
         <td>{{ contact.photo }}</td>
         <td class="text-end">

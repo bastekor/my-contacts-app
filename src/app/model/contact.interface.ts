@@ -6,5 +6,6 @@ export interface Contact {
   phone_number: string;
   email: string;
   address: string;
+  date: string;
   photo: boolean;
 }
